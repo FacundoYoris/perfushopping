@@ -32,22 +32,22 @@ app.use(
 		}
 	})
 )
-const checkSessionMiddleware = (req, res, next) => {
-    // Verifica si esta logueado existe en la sesión (o donde lo almacenes)
-    if (req.session.logueado) {
-        next(); // Si existe, continúa con la siguiente función de middleware o ruta
-    } else {
-        // Si no existe, redirige a la ruta '/login'
-		if(req.path == '/login' || req.path == '/cerrarSesion'){
-			next();
-		}else{
-			res.render('inicio_sesion.ejs', {"x": false });
+// const checkSessionMiddleware = (req, res, next) => {
+//     // Verifica si esta logueado existe en la sesión (o donde lo almacenes)
+//     if (req.session.logueado) {
+//         next(); // Si existe, continúa con la siguiente función de middleware o ruta
+//     } else {
+//         // Si no existe, redirige a la ruta '/login'
+// 		if(req.path == '/login' || req.path == '/cerrarSesion'){
+// 			next();
+// 		}else{
+// 			res.render('inicio_sesion.ejs', {"x": false });
 
-		}
-	}
-};
-// Usa el middleware en todas las rutas
-app.use(checkSessionMiddleware);
+// 		}
+// 	}
+// };
+// // Usa el middleware en todas las rutas
+// app.use(checkSessionMiddleware);
 
 app.use(indexRoutes)
 const puerto = process.env.PORT || 3000;

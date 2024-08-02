@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfushopping</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <%- include('partes/header.ejs') %>
+</head>
+<body>
+    <div id="menu">
+        <%- include('partes/navegacionOpcional.ejs') %>
+    </div>
+    <main id="main">
+        <h1>Listado de productos</h1>
+        <ul>
+            <% results.forEach((producto) => { %>
+                <li><%= producto.produ %></li>
+            <% }) %>
+        </ul>
+    </main>
+
+    <script src="/javascript/navegacionOpcional.js"></script>
+</body>
+</html>
