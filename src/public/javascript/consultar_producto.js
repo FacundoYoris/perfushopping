@@ -10,7 +10,7 @@ document.getElementById('scanButton').addEventListener('click', function() {
             target: document.querySelector('#camera')    // El contenedor donde se mostrará la cámara
         },
         decoder: {
-            readers: ["ean_reader"] // Actualizado para leer códigos de barras EAN-13
+            readers:  ["ean_reader"] // Actualizado para leer códigos de barras EAN-13
         }
     }, function(err) {
         if (err) {
@@ -18,13 +18,18 @@ document.getElementById('scanButton').addEventListener('click', function() {
             alert('Error al iniciar la cámara: ' + err);
             return;
         }
+        console.log("Camara inicializada");
         Quagga.start();
+        // Ajustar el tamaño del video después de la inicialización
+        var video = document.querySelector('video');
+        video.classList.add('camera-small');  // Aplica la clase CSS para el tamaño
     });
 
     // Manejar el resultado del escaneo
     Quagga.onDetected(function(result) {
         var code = result.codeResult.code;
         alert('Código de barras escaneado: ' + code);
+        console.log(code);
         document.getElementById('barcodeSearch').value = code;
         filterTable(); // Llama a tu función para filtrar la tabla
         Quagga.stop(); // Detiene la cámara

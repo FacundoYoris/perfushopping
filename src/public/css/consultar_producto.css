@@ -99,23 +99,27 @@ tr:nth-child(even) {
 
 #camera {
     width: 100%;
-    max-width: 600px;
-    height: 400px;
+    max-width: 400px;
+    height: 300px;
     background-color: #000;
 }
-
+.camera-small {
+    width: 400px;  /* Ajusta el ancho según tu preferencia */
+    height: 300px;  /* Ajusta el alto según tu preferencia */
+    margin: 0 auto;  /* Centrar el video horizontalmente */
+  }
 #closeCameraButton {
     margin-top: 10px;
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;
     color: white;
-    background-color: red;
+    background-color: rgb(220, 149, 149);
     border: none;
     border-radius: 5px;
     z-index: 1001; /* Asegura que esté por encima del contenedor de la cámara */
 }
-
+/* Estilos responsive para pantallas pequeñas */
 @media screen and (max-width: 600px) {
     h1 {
         font-size: 1.2em;
@@ -123,7 +127,7 @@ tr:nth-child(even) {
 
     .search-container, #descriptionSearch {
         flex-direction: column;
-        align-items: flex-start;
+        align-items:center;
     }
 
     #scanButton {
@@ -132,15 +136,10 @@ tr:nth-child(even) {
     }
 
     table, thead, tbody, th, td, tr {
-        display: block;
         width: 100%;
     }
 
-    thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
+   
 
     tr {
         border: 1px solid #ccc;
@@ -152,6 +151,7 @@ tr:nth-child(even) {
         border-bottom: 1px solid #ddd;
         position: relative;
         padding-left: 50%;
+        
     }
 
     td:before {
@@ -163,4 +163,46 @@ tr:nth-child(even) {
         font-weight: bold;
         white-space: nowrap;
     }
+    table {
+        display: block; /* Permite que la tabla sea desplazable */
+        overflow-x: auto; /* Scroll horizontal */
+    }
+    
 }
+/* Contenedor que permite el desplazamiento */
+.containerTable {
+    overflow-x: auto; /* Permite scroll horizontal */
+    overflow-y: auto; /* Permite scroll vertical */
+    width: 100%;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow: auto; /* Habilita scroll en ambas direcciones */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    white-space: nowrap; /* Evita el desbordamiento de texto */
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+
+
+
+/* Asegura que el contenido no se desborde */
+td {
+    overflow-wrap: break-word; /* Rompe el texto largo en varias líneas si es necesario */
+}
+

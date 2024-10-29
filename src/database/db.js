@@ -1,9 +1,9 @@
 
 import mysql2 from 'mysql2';
 const connection = mysql2.createPool({
-	host: 'localhost',
-	user: 'root',
-	password: 'root',
+	host: 'perfushopping.sytes.net',
+	user: 'Javiery',
+	password: 'Jry73Ngf75',
 	database: 'perfushopping'
 });
 export default connection;

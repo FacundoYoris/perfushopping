@@ -59,6 +59,7 @@ app.listen(puerto, ()=>{
 
 import connection from './database/db.js'
 
+import Quagga from 'quagga';
 
 
 

@@ -19,4 +19,7 @@ main {
     overflow-x: hidden;
 }
  
-   
+.perfushoppingtitle{
+    margin-top: 80px;
+    font-size: 1.5em;  /* 1.5 veces el tamaño de fuente base */
+}
